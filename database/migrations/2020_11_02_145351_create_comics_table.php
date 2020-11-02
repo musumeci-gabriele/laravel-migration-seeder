@@ -13,14 +13,22 @@ class CreateComicsTable extends Migration
      */
     public function up()
     {
+        // Prepariamo tutti i dati per il nostro db ---------------------
+        
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string("title",30);
-            $table->string("original-title",50);
+            $table->string("original_title",50);
             $table->string("author",50);
             $table->smallinteger("number");
             $table->smallinteger("n_pages");
             $table->string("edition",50);
+            $table->string("reading",2);
+            $table->float("price", 6, 2);
+            $table->boolean("color")->default(false);
+            $table->year("release");
+            // Inseriamo un immagine di default nel caso nel db non ci sia.
+            $table->string("cover")->default("https://via.placeholder.com/200x300"); 
             $table->timestamps();
         });
     }
