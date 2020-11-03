@@ -11,7 +11,6 @@ class ComicsTableSeeder extends Seeder
      *
      * @return void
      */
-
     //  Inseriamo la classe Faker in Run --------------------------------------------
     public function run(Faker $faker)
     {

@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// collegamento al mio controller
+Route::resource("comics", "ComicController");
+Route::get("comics", "ComicController@getById");

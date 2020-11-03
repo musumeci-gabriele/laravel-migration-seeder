@@ -18,7 +18,7 @@ class CreateComicsTable extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->string("title",30);
-            $table->string("original_title",50);
+            $table->string("original_title",50)->nullable();
             $table->string("author",50);
             $table->smallinteger("number");
             $table->smallinteger("n_pages");
