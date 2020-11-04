@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// implemento con il Model Comic
-use App\Comic;
+use App\Genre;
 
-class ComicController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+        $genres = Genre::all();
 
-        return view("comics.index", compact("comics"));
+        return view("genres.index", compact("genres"));
     }
 
     /**
@@ -27,7 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        //
     }
 
     /**
@@ -49,9 +48,7 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        $comic = Comic::find($id);
-
-        return view('comics.show', compact('comic'));
+        //
     }
 
     /**
@@ -62,7 +59,8 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $genre = Genre::findOrFail($id);
+        return view("genres.edit", compact("genre"));
     }
 
     /**

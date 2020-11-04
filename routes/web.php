@@ -20,3 +20,5 @@ Route::get('/', function () {
 // collegamento al mio controller
 Route::resource("comics", "ComicController");
 Route::get("comics", "ComicController@getById");
+
+Route::resource("genres", "GenreController");

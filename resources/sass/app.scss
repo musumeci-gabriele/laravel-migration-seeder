@@ -1,1 +1,11 @@
-//
+@import "~bootstrap/scss/bootstrap.scss";
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.scheda {
+    list-style: none;
+    flex-basis: 300px;
+}
